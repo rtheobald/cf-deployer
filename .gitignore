@@ -20,7 +20,7 @@ tmp
 *.a
 mkmf.log
 .cf
-Gemfile.lock
+/Gemfile.lock
 
 # Deployment-generated files
 spec/fixtures/cf-deploy-app/manifest_prepared.yml
