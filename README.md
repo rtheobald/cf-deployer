@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/armakuni/cf-deployer.png?branch=master)](https://travis-ci.org/bendodd/gloader)
+
 # Cf::Deployer
 
 Deploy Applications to CF 2
