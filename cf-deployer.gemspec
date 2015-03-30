@@ -36,4 +36,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'thread_safe'
 
   spec.add_dependency 'retryable', '1.3.6'
+  spec.add_dependency 'thor', '0.19.1'
 end
