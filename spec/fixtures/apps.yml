@@ -1,0 +1,30 @@
+---
+buildpack: https://github.com/heroku/heroku-buildpack-ruby.git#v120
+instances: 1
+no-route: true
+domain: de.a9sapp.eu
+path: '.'
+memory: 128M
+env:
+  RACK_ENV: production
+  BUILD_NUMBER: 0
+applications:
+- name: foo
+  path: '.'
+  instances: 1
+  mem: 128M
+  host: foo-<<BUILD_NUMBER>>
+  services:
+  - foo-redis-1
+  env:
+    BAR_URL: foo-<<BUILD_NUMBER>>
+    BUILD_NUMBER: 0
+- name: bar
+  path: '.'
+  instances: 1
+  mem: 128M
+  services:
+  - bar-redis-1
+  env:
+    FOO_URL: nil
+    BUILD_NUMBER: 0

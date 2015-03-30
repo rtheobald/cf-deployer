@@ -1,0 +1,16 @@
+path: '.'
+memory: 96M
+instances: 1
+domain: de.a9sapp.eu
+env:
+  RACK_ENV: production
+  BUILD_NUMBER: nil
+applications:
+- name: cf-deploy-app-alpha
+  host: cf-deploy-app-alpha
+- name: cf-deploy-app-alpha-worker
+  no-route: true
+  command: 'yes'
+- name: cf-deploy-app-alpha-scheduler
+  no-route: true
+  command: 'yes'

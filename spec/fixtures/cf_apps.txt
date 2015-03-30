@@ -1,0 +1,11 @@
+Getting apps in org ccp_accounts_cloudcredo_com / space production as ccp.accounts@cloudcredo.com...
+OK
+
+name      requested state   instances   memory   disk   urls
+foo-v10   started           1/1         128M     1G     foo.de.a9sapp.eu, foo-2.de.a9sapp.eu
+foo-v15   started           1/1         128M     1G     foo.de.a9sapp.eu
+foo-v20   started           1/1         128M     1G     foo.de.a9sapp.eu
+foo-v2    started           1/1         128M     1G
+foo-v1    started           1/1         128M     1G
+bar-v1    started           1/1         128M     1G     bar.de.a9sapp.eu
+
