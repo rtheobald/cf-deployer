@@ -83,6 +83,20 @@ module CF
             end
           end
         end
+
+        context 'with versions and a overriden name' do
+          before do
+            stub_const('ENV', 'CF_DEPLOYER_VERSIONS_ENABLED' => 'true',
+                              'CF_D_NAME' => 'bar-production')
+          end
+
+          it 'parses a manifest with overrides' do
+            Timecop.freeze do
+              expect(subject.parse_manifest['applications'].first['name']).to \
+                eq "bar-production-v#{Time.now.to_i}"
+            end
+          end
+        end
       end
 
       describe '#save_manifest' do

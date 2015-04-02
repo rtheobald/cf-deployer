@@ -46,14 +46,14 @@ module CF
       end
 
       def parse_hash(manifest_hash)
+        manifest_hash['path'] = manifest_dir if manifest_hash['path'] == '.'
+        manifest_hash['env'].each(&parse_hash_proc(manifest_hash['env'])) if manifest_hash['env']
+        manifest_hash       .each(&parse_hash_proc(manifest_hash))
+
         name = manifest_hash['name']
         if versions_enabled? && name
           manifest_hash['name'] = AppVersioner.new(name).app_name_with_version
         end
-
-        manifest_hash['path'] = manifest_dir if manifest_hash['path'] == '.'
-        manifest_hash['env'].each(&parse_hash_proc(manifest_hash['env'])) if manifest_hash['env']
-        manifest_hash       .each(&parse_hash_proc(manifest_hash))
 
         manifest_hash
       end

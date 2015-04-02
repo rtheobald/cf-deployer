@@ -6,7 +6,7 @@
 # versions of RuboCop, may require this file to be generated again.
 AllCops:
   Include:
-    - Gemfile
+    - '**/Gemfile'
     - Rakefile
     - cf-deployer.gemspec
   Exclude:
