@@ -68,7 +68,8 @@ module CF
           "-p #{ENV['CF_PASSWD']} " \
           "-a #{ENV['CF_API']} " \
           "-o #{ENV['CF_ORG']} "\
-          "-s #{ENV['CF_SPACE']}",
+          "-s #{ENV['CF_SPACE']}"\
+          (ENV['CF_SKIP_SSL']?' --skip-ssl-validation':''),
           true
         )
       end
